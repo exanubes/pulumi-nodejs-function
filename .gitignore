@@ -1,0 +1,6 @@
+/bin/
+/node_modules/
+.idea/
+**/node_modules
+DS_Store
+nodejs_function/dist
