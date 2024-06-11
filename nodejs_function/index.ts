@@ -40,9 +40,9 @@ export class NodejsFunction extends pulumi.ComponentResource {
     if (props.policy) this.addPolicy(`${name}_RolePolicy`, props.policy);
   }
 
-  grantInvoke(principal: string, arn?: pulumi.Input<string>) {
+  grantInvoke(name: string, principal: string, arn?: pulumi.Input<string>) {
     return new aws.lambda.Permission(
-      `${this.name}_InvokeLambdaPermission`,
+      name,
       {
         action: "lambda:InvokeFunction",
         function: this.handler.arn,
