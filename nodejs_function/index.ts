@@ -2,9 +2,9 @@ import * as pulumi from "@pulumi/pulumi";
 import * as aws from "@pulumi/aws";
 
 export const Runtime = {
-  NodeJS16dX: aws.lambda.Runtime.NodeJS16dX,
-  NodeJS18dX: aws.lambda.Runtime.NodeJS18dX,
-  NodeJS20dX: aws.lambda.Runtime.NodeJS20dX,
+  NodeJS16: aws.lambda.Runtime.NodeJS16dX,
+  NodeJS18: aws.lambda.Runtime.NodeJS18dX,
+  NodeJS20: aws.lambda.Runtime.NodeJS20dX,
 } as const;
 
 type NodejsFunctionArgs = Omit<aws.lambda.FunctionArgs, "role"> & {
@@ -25,7 +25,7 @@ export class NodejsFunction extends pulumi.ComponentResource {
       `${name}_Function`,
       {
         architectures: props.architectures ?? ["arm64"],
-        runtime: props.runtime ?? Runtime.NodeJS20dX,
+        runtime: props.runtime ?? Runtime.NodeJS20,
         role: role.arn,
         ...props,
       },
