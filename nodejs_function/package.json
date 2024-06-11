@@ -1,6 +1,9 @@
 {
   "name": "@exanubes/pulumi-nodejs-function",
-  "version": "1.0.7",
+  "author": "Exanubes",
+  "repository": "https://github.com/exanubes/pulumi-nodejs-function",
+  "website": "https://github.com/exanubes/pulumi-nodejs-function",
+  "version": "1.0.8",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
