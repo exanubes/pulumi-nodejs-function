@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/@exanubes%2Fpulumi-nodejs-function.svg)](https://badge.fury.io/js/@exanubes%2Fpulumi-nodejs-function)
+
 # Pulumi Node.js Function
 
 The `NodejsFunction` is a very simple component that streamlines the creation of a Node.js Lambda function in Pulumi by setting default values for architecture and runtime. It also creates an IAM role and assigns basic permissions for interacting with CloudWatch – `arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole`.
@@ -45,5 +47,22 @@ lambda.addPolicy("some-policy", {
             },
         ],
     },
+});
+```
+
+## Typescript support
+
+The `TypescriptAssetArchive` class can be used for transpiling lambda handlers written in typescript into javascript.
+It's a simple wrapper around Pulumi's `AssetArchive` resource. It uses esbuild for transpiling the code to javascript and saving it in memory, creates a Pulumi `StringAsset` which is 
+used to create an `AssetArchive`. The resulting file will have the same name with the extension changed from `.ts` to `.js`.
+Esbuild configuration can be modified by passing a second argument
+
+
+```typescript
+const esbuildOptions: TypescriptAssetArchiveArgs = {}
+
+const ts_lambda = new NodejsFunction("hello_world", {
+  code: new TypescriptAssetArchive("./functions/hello_typescript.ts", esbuildOptions),
+  handler: "hello_typescript.handler",
 });
 ```

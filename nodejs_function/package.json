@@ -3,7 +3,7 @@
   "author": "Exanubes",
   "repository": "https://github.com/exanubes/pulumi-nodejs-function",
   "website": "https://github.com/exanubes/pulumi-nodejs-function",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -13,6 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
+    "esbuild": ">=0.21.5",
     "@pulumi/pulumi": ">=3.0.0",
     "@pulumi/aws": ">=6.0.0"
   }

@@ -3,6 +3,7 @@
     "main": "index.ts",
     "devDependencies": {
         "@types/node": "^18",
+        "esbuild": "^0.21.5",
         "prettier": "^3.3.1",
         "tsup": "^8.1.0",
         "typescript": "^5.0.0"
