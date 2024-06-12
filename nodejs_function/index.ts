@@ -1,2 +1,2 @@
-export * from "./nodejs-function";
-export * from "./typescript-asset-archive";
+export * from "./src/nodejs-function";
+export * from "./src/typescript-asset-archive";
