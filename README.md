@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/@exanubes%2Fpulumi-nodejs-function.svg)](https://badge.fury.io/js/@exanubes%2Fpulumi-nodejs-function)
+
 # Pulumi Node.js Function
 
 Repository for a blog article about [creating custom Component Resources in Pulumi](https://exanubes.com/blog/creating-a-custom-component-resource-in-pulumi) and a supporting [video](https://youtu.be/wQ-JwIUzVUM).
