@@ -21,13 +21,13 @@ export class TypescriptAssetArchive extends AssetArchive {
     const fileName = path.split("/").at(-1);
     if (!fileName) throw new Error("invalid path");
     if (!fileName.endsWith(".ts"))
-      throw new Error("The path should be to a typescript file");
+      throw new Error("The path should point to a typescript file");
 
     const code = TypescriptAssetArchive.build({
       path,
       ...props,
     });
-    if (!code) throw new Error("Code is empty");
+    if (!code) throw new Error("File is empty");
 
     super({
       [fileName.replace(/\.ts$/, ".js")]: new StringAsset(code),
@@ -46,7 +46,7 @@ export class TypescriptAssetArchive extends AssetArchive {
       platform: "node",
       minifyWhitespace: true,
       minify: false,
-      target: props.target || version ? `node${version}` : "node20", // Specify your node version
+      target: props.target || (version ? `node${version}` : "node20"), // Specify your node version
       format: "cjs", // CommonJS format for Lambda compatibility
       external: [], // Add any external dependencies you want to exclude from the bundle
       tsconfig: join(process.cwd(), "tsconfig.json"),
